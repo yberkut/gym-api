@@ -1,0 +1,24 @@
+{
+  "name": "gym-api",
+  "version": "0.1.0",
+  "description": "API for GYM app",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yberkut/gym-api.git"
+  },
+  "author": "Iaroslav Berkut",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yberkut/gym-api/issues"
+  },
+  "homepage": "https://github.com/yberkut/gym-api#readme",
+  "dependencies": {
+    "body-parser": "~1.15.1",
+    "express": "~4.14.0",
+    "mongoose": "~4.5.0"
+  }
+}
