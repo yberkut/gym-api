@@ -1,5 +1,5 @@
 {
-  "name": "gym-api",
+  "firstName": "gym-api",
   "version": "0.1.0",
   "description": "API for GYM app",
   "main": "server.js",
@@ -17,8 +17,8 @@
   },
   "homepage": "https://github.com/yberkut/gym-api#readme",
   "dependencies": {
-    "body-parser": "~1.15.1",
+    "body-parser": "~1.15.2",
     "express": "~4.14.0",
-    "mongoose": "~4.5.0"
+    "mongoose": "~4.5.1"
   }
 }
