@@ -10,7 +10,8 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://gymuser:pass234@ds021034.mlab.com:21034/gym-db'); // connect to our database
 
-var personsApiInit = require('./app/api/persons');
+var personsApi = require('./app/api/persons');
+var rolesApi = require('./app/api/roles');
 
 // configure app to use bodyParser()
 // this will let us get the data from a POST
@@ -38,8 +39,9 @@ router.get('/', function (req, res) {
 // more routes for our API will happen here
 
 // on routes that end in /persons
-// ----------------------------------------------------
-personsApiInit(router);
+personsApi(router);
+// on routes that end in /roles
+rolesApi(router);
 
 
 // REGISTER OUR ROUTES -------------------------------

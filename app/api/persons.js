@@ -10,10 +10,9 @@ module.exports = function (router) {
   // create a person (accessed at POST http://localhost:8080/api/persons)
     .post(function (req, res) {
 
-      var person = new Person();      // create a new instance of the Person model
-      person.firstName = req.body.firstName;  // set the persons firstName (comes from the request)
+      var person = new Person();
+      person.firstName = req.body.firstName;
 
-      // save the person and check for errors
       person.save(function (err) {
         if (err)
           res.send(err);
@@ -24,18 +23,18 @@ module.exports = function (router) {
     })
     // get all the persons (accessed at GET http://localhost:8080/api/persons)
     .get(function (req, res) {
-      Person.find(function (err, bears) {
+      Person.find(function (err, persons) {
         if (err)
           res.send(err);
 
-        res.json(bears);
+        res.json(persons);
       });
     });
 
   // on routes that end in /persons/:person_id
   // ----------------------------------------------------
   router.route('/persons/:person_id')
-  // get the bear with that id (accessed at GET http://localhost:8080/api/bears/:bear_id)
+  // get the person with that id (accessed at GET http://localhost:8080/api/persons/:person_id)
     .get(function (req, res) {
       Person.findById(req.params.person_id, function (err, person) {
         if (err)
@@ -43,16 +42,15 @@ module.exports = function (router) {
         res.json(person);
       });
     })
-    // update the bear with this id (accessed at PUT http://localhost:8080/api/bears/:bear_id)
+    // update the person with this id (accessed at PUT http://localhost:8080/api/persons/:person_id)
     .put(function (req, res) {
 
-      // use our person model to find the person we want
       Person.findById(req.params.person_id, function (err, person) {
 
         if (err)
           res.send(err);
 
-        person.firstName = req.body.firstName;  // update the persons info
+        person.firstName = req.body.firstName;
 
         // save the person
         person.save(function (err) {
